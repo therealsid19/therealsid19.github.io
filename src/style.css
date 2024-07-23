@@ -556,8 +556,8 @@ button:focus {
   font-size: 4.5em !important;
   margin: 15px !important;
   padding: 10px !important;
-  opacity: 0.93 !important;
-  border: 1.7px solid rgba(200, 137, 230, 0.637) !important;
+  opacity: 1 !important;
+  border: 1.7px solid #c889e6a2 !important;
   vertical-align: middle !important;
   text-align: center !important;
   border-radius: 5px !important;
@@ -570,7 +570,12 @@ button:focus {
 @media (max-width: 767px) {
   .tech-icons {
     margin: 10px !important;
+    opacity: 1;
   }
+}
+
+.tech-icons svg {
+  color: #e8e0e0; /* Set to desired color */
 }
 
 .tech-icons:hover {

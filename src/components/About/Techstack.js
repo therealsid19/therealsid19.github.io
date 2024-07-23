@@ -1,3 +1,4 @@
+/*
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { CgCPlusPlus } from "react-icons/cg";
@@ -69,3 +70,4 @@ function Techstack() {
 }
 
 export default Techstack;
+*/
