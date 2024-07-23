@@ -6,6 +6,7 @@ import Home2 from "./Home2";
 import Type from "./Type";
 import Home3 from "./Home3";
 import Socials from "./Socials";
+import Projects from "../Projects/Projects.js"
 import {
   Image,
   ScrollDown,
@@ -58,6 +59,7 @@ function Home() {
       </Container>
       <Home2 />
       <Home3 />
+      <Projects />
       <Socials />
     </section>
   );

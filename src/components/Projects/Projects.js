@@ -5,40 +5,36 @@ import Particle from "../Particle";
 import leaf from "../../Assets/Projects/leaf.png";
 import emotion from "../../Assets/Projects/emotion.png";
 import editor from "../../Assets/Projects/codeEditor.png";
-import chatify from "../../Assets/Projects/chatify.png";
+import SP from "../../Assets/Projects/SP-Restaurant.png";
 import suicide from "../../Assets/Projects/suicide.png";
-import bitsOfCode from "../../Assets/Projects/blog.png";
+import Cmd from "../../Assets/Projects/Command-Menu.png";
 
 function Projects() {
   return (
     <Container fluid className="project-section">
       <Container>
-        <h1 className="project-heading">
+        <h1 className="project-heading" id="projects">
           My Recent <strong className="purple">Works </strong>
         </h1>
         <p style={{ color: "white" }}>
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
+          <Col md={5} className="project-card">
             <ProjectCard
-              imgPath={chatify}
-              isBlog={false}
-              title="Chatify"
-              description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
-              ghLink="https://github.com/soumyajit4419/Chatify"
-              demoLink="https://chatify-49.web.app/"
+              imgPath={SP}
+              title="S&P Restaurant Management System"
+              description="Developed a comprehensive Restaurant Management System to streamline and optimize restaurant operations, efficiently handling over 1000 daily transactions. The system featured robust order management, tracking order status in real-time to ensure smooth workflow from placement to fulfillment. This project leveraged Python for backend logic, Kivy for the graphical user interface, and SQL for database management, resulting in a robust and scalable solution capable of meeting the high demands of a busy restaurant environment."
+              ghLink="https://github.com/PalD777/SP_RestaurantManagementSystem"
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col md={5} className="project-card">
             <ProjectCard
-              imgPath={bitsOfCode}
-              isBlog={false}
-              title="Bits-0f-C0de"
-              description="My personal blog page build with Next.js and Tailwind Css which takes the content from makdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
-              ghLink="https://github.com/soumyajit4419/Bits-0f-C0de"
-              demoLink="https://blogs.soumya-jit.tech/"
+              imgPath={Cmd}
+              title="Command Menu System"
+              description="Developed a responsive command-line user interface (CLI) using the curses library in Python, designed to host a variety of useful applications. This interface was built to be highly interactive and user-friendly, allowing seamless navigation between different apps. Key features included a weather app that fetched and displayed real-time weather updates, an optical character recognition (OCR) app for converting images of text into editable text, a clock app that provided an accurate time display, and a cryptography app that offered various encryption and decryption functionalities"
+              ghLink="https://github.com/PalD777/CmdMenuSuite?tab=readme-ov-file"
             />
           </Col>
 
