@@ -16,7 +16,7 @@ export const colors = {
     backfill: '#F8FCFF',
 
     navHome: "#D5BB77", 
-    navHomeDark: "#BFA45C", 
+    navHomeDark: "#cc0099", 
 
     navIntro: "#7D9BD6", 
     navIntroDark: "#5F80C3", 
