@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.493fecb8.css",
-    "main.js": "/static/js/main.1bb23a32.js",
-    "static/media/SP-Restaurant.png": "/static/media/SP-Restaurant.655e7c36d556b52a7b22.png",
-    "static/media/Command-Menu.png": "/static/media/Command-Menu.7765e92af66efd730e39.png",
+    "main.css": "/static/css/main.1a7f23cf.css",
+    "main.js": "/static/js/main.5a1ebfcb.js",
+    "static/media/SP-Restaurant.png": "/static/media/SP-Restaurant.4a873f3b6938fd5ccca5.png",
     "static/media/bg-2.jpg": "/static/media/bg-2.6e2fe42d61b0a956387d.jpg",
+    "static/media/Command-Menu.png": "/static/media/Command-Menu.23cc47cc57b7b8d21180.png",
+    "static/media/quarantine.jpg": "/static/media/quarantine.e89838ce1660a86d983a.jpg",
     "static/media/avatar.svg": "/static/media/avatar.5852f40fbb38aa284829fa3fb7722225.svg",
     "static/media/Sun.svg": "/static/media/Sun.681607dcda2a01539a9a8a157ae74e6e.svg",
     "static/media/pre.svg": "/static/media/pre.d4812f51c8c80976eaab.svg",
-    "index.html": "/index.html",
     "static/media/Moon.svg": "/static/media/Moon.0a6a2b75ac51157455302ddcfca385c0.svg",
-    "main.493fecb8.css.map": "/static/css/main.493fecb8.css.map",
-    "main.1bb23a32.js.map": "/static/js/main.1bb23a32.js.map"
+    "index.html": "/index.html",
+    "main.1a7f23cf.css.map": "/static/css/main.1a7f23cf.css.map",
+    "main.5a1ebfcb.js.map": "/static/js/main.5a1ebfcb.js.map"
   },
   "entrypoints": [
-    "static/css/main.493fecb8.css",
-    "static/js/main.1bb23a32.js"
+    "static/css/main.1a7f23cf.css",
+    "static/js/main.5a1ebfcb.js"
   ]
 }
