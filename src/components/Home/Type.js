@@ -5,12 +5,19 @@ function Type() {
   return (
     <Typewriter
       options={{
-        strings: [
-          "Software Developer",
-        ],
+        strings: ["Software Developer"],
         autoStart: true,
-        loop: true,
+        loop: false, // Ensure the typewriter does not loop
         deleteSpeed: 50,
+      }}
+      onInit={(typewriter) => {
+        typewriter
+          .typeString("Software Developer")
+          .pauseFor(2500) // Pause for effect after typing
+          .callFunction(() => {
+            console.log("String typed out!"); // Optional: Callback function when typing is complete
+          })
+          .start();
       }}
     />
   );
