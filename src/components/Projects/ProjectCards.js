@@ -1,25 +1,23 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import { BsGithub } from "react-icons/bs";
 
-function ProjectCards(props) {
+function ProjectCards({ imgPath, title, description, ghLink, customClass }) {
   return (
-    <Card className="project-card-view">
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
-      <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text style={{ textAlign: "left" }}>
-          {props.description}
-        </Card.Text>
-        <Button variant="primary" href={props.ghLink} target="_blank">
-          <BsGithub /> &nbsp;
-          {props.isBlog ? "Blog" : "GitHub"}
-        </Button>
-        {"\n"}
-        {"\n"}
-      </Card.Body>
-    </Card>
+    <div className={`project-card ${customClass}`}>
+      <div className="project-image-wrapper">
+        <img src={imgPath} alt={title} className="project-image" />
+        <div className="hover-overlay">
+          <div className="hover-text">
+            <h2>{title}</h2>
+            <p>{description}</p>
+            <a href={ghLink} target="_blank" rel="noopener noreferrer">
+              <BsGithub /> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
+
 export default ProjectCards;

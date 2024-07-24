@@ -29,7 +29,7 @@ function Socials(){
 
               <li className="social-icons">
                 <a
-                  href="https://www.linkedin.com/in/soumyajit4419/"
+                  href="www.linkedin.com/in/siddhant-nair-61186b282"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
@@ -39,7 +39,7 @@ function Socials(){
               </li>
               <li className="social-icons">
                 <a
-                  href="https://www.instagram.com/soumyajit4419"
+                  href="https://www.instagram.com/therealsid19"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"

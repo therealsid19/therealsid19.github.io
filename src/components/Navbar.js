@@ -47,9 +47,7 @@ const Navbar = () => {
                         </SidebarWrapper>
                     </SidebarContainer>
                 </Sidebar>
-                <DarkModeWrapper>
-                    <DarkMode />
-                </DarkModeWrapper>
+
             </NavbarContainer>
         </Nav>
     );

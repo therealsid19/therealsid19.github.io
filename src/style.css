@@ -329,79 +329,135 @@ button:focus {
 .project-section {
   position: relative !important;
   padding-top: 150px !important;
-  padding-bottom: 30px !important;
+  padding-bottom: 150px !important;
   background-image: var(--section-background-color) !important;
 }
 
+.projects-list {
+  display: grid; /* Change to grid layout */
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 30px; /* Space between cards */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.project-section.visible .projects-list {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .project-card {
-  padding-top: 50px !important;
-  padding-bottom: 50px !important;
-  padding-left: 25px !important;
-  padding-right: 25px !important;
-  height: auto !important;
+  position: relative;
+  overflow: hidden;
+  transition: transform 1s ease;
 }
 
-.project-card-view {
-  box-shadow: 0 4px 5px 3px rgba(73, 94, 160, 0.459) !important;
-  color: white !important;
-  background-color: transparent !important;
-  opacity: 0.9 !important;
-  transition: all 0.5s ease 0s !important;
-  height: 100% !important;
-}
-.project-card-view:hover {
-  transform: scale(1.02) !important;
-  overflow: hidden !important;
-  box-shadow: 0 4px 4px 5px rgba(72, 121, 144, 0.561) !important;
+.project-card:hover {
+  transform: scale(1.05);
 }
 
-.card-img-top {
-  padding: 20px !important;
-  opacity: 0.8 !important;
-  border-radius: 10px !important;
+.project-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* Set a maximum width */
+  margin: 0 auto; /* Center the image wrapper */
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px; /* Set a maximum height */
+  border-radius: 10px;
+  transition: opacity 0.5s ease;
+  object-fit: cover; /* Ensure the image covers the container without distortion */
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.project-card:hover .hover-overlay {
+  opacity: 1;
+}
+
+/* Ensure this style applies only to the large-image class */
+.large-image .project-image {
+  height: 358px; /* Adjust this value to reduce the height */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the container */
+}
+
+/* Adjust wrapper styles */
+.large-image .project-image-wrapper {
+  max-width: 100% !important; /* Ensure the wrapper can accommodate the image */
+  height: 358px; /* Allow the wrapper to adjust based on image size */
+  padding: 0; /* Adjust padding if necessary */
+}
+
+/* Ensure this style applies only to the large-image class */
+.large-image2 .project-image {
+  height: 358px; /* Adjust this value to reduce the height */
+  width: 530px; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the container */
+}
+
+/* Adjust wrapper styles */
+.large-image2 .project-image-wrapper {
+  max-width: 100% !important; /* Ensure the wrapper can accommodate the image */
+  height: 358px; /* Allow the wrapper to adjust based on image size */
+  padding: 0; /* Adjust padding if necessary */
 }
 
 
-.btn-primary {
-  color: #fff !important;
-  background-color: #000000 !important;
-  border-color: #202eae !important;
+
+.hover-text {
+  text-align: center;
+  padding: 10px;
 }
 
-.btn-primary:hover {
-  color: #fff !important;
-  background-color: #1d3bc1d7 !important;
-  border-color: #3971c5d7 !important;
+.hover-text h2 {
+  margin-bottom: 10px;
 }
-.btn:focus {
-  outline: none !important;
-  box-shadow: none !important;
+
+.hover-text p {
+  margin-bottom: 20px;
 }
+
+.hover-text a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
 .project-heading {
   color: white !important;
   font-size: 2.3em !important;
   font-weight: 500 !important;
-  padding-top: 10px !important;
+  padding-top: 1px !important;
+  margin-bottom: 70px;
+  margin-top: -60px;
 }
 
-/* Auto-hover effect animation */
-@keyframes autoHover {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-.project-card-wrapper:hover .project-card-view {
-  animation: autoHover 3s infinite;
+@media screen and (max-width: 768px) {
+  .projects-list {
+    grid-template-columns: 1fr; /* Stack items vertically on small screens */
+  }
 }
 
 
-.project-heading {
-  color: white !important;
-  font-size: 2.3em !important;
-  font-weight: 500 !important;
-  padding-top: 10px !important;
-}
 
 /* --------- */
 /* About */
@@ -421,25 +477,75 @@ button:focus {
   justify-content: center;
   gap: 20px;
   padding: 10px;
+  font-size: 110px;
 }
 
 .tech-icons .icon {
-  font-size: 4.5em;
-  margin: 15px;
-  padding: 10px;
-  opacity: 1;
-  vertical-align: middle;
-  text-align: center;
-  border-radius: 5px;
-  display: inline-block;
-  overflow: hidden;
-  transition: transform 0.4s ease, border 0.4s ease;
+  animation: fadeIn 1s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
-.tech-icons .icon:hover {
-  transform: scale(1.1);
-  border: 2.2px solid rgba(115, 169, 230, 0.883);
+/* Add keyframes for fading in icons */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
+/* Apply the animation to tech icons */
+.tech-icons .icon {
+  animation: fadeIn 1s ease-out forwards;
+  opacity: 0; /* Start as invisible */
+  transform: translateY(20px); /* Start slightly below */
+}
+
+/* Add a delay for each icon */
+.tech-icons .icon:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.tech-icons .icon:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.tech-icons .icon:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.tech-icons .icon:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.tech-icons .icon:nth-child(5) {
+  animation-delay: 1s;
+}
+
+.tech-icons .icon:nth-child(6) {
+  animation-delay: 1.2s;
+}
+
+.tech-icons .icon:nth-child(7) {
+  animation-delay: 1.4s;
+}
+
+.tech-icons .icon:nth-child(8) {
+  animation-delay: 1.6s;
+}
+
+.tech-icons .icon:nth-child(9) {
+  animation-delay: 1.8s;
+}
+
+.tech-icons .icon:nth-child(10) {
+  animation-delay: 2s;
+}
+
 
 /* Set original colors for each icon */
 .tech-icons .icon.di-python svg {
