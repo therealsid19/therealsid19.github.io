@@ -43,7 +43,7 @@ function Projects() {
           <ProjectCard
             imgPath={SP}
             title="S&P Restaurant Management System"
-            description="Developed a comprehensive Restaurant Management System to streamline and optimize restaurant operations, efficiently handling over 1000 daily transactions. The system featured robust order management, tracking order status in real-time to ensure smooth workflow from placement to fulfillment. This project leveraged Python for backend logic, Kivy for the graphical user interface, and SQL for database management, resulting in a robust and scalable solution capable of meeting the high demands of a busy restaurant environment."
+            description="Developed a comprehensive Restaurant Management System to streamline and optimize restaurant operations, efficiently handling over 1000 daily transactions. This project leveraged Python for backend logic, Kivy for the graphical user interface, and SQL for database management, resulting in a robust and scalable solution capable of meeting the high demands of a busy restaurant environment."
             ghLink="https://github.com/PalD777/SP_RestaurantManagementSystem"
             customClass="large-image" // Apply the custom class here
           />

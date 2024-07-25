@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/avatar.svg";
 import Tilt from "react-parallax-tilt";
 import { useInView } from 'react-intersection-observer';
 
@@ -19,7 +18,7 @@ function Home2() {
               <span className="purple"> About Me </span>
             </h1>
             <p className="home-about-body">
-              Hello! I'm Siddhant Nair, a third-year Computer Science student at McMaster University 
+              I'm a third-year Computer Science student at McMaster University 
               with a passion for software development and technology. 
               <br />
               <br />
