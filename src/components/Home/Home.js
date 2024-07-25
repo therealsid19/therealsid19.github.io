@@ -1,25 +1,21 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-
-import Particle from "../Particle";
-import Home2 from "./Home2";
+import About from "./About.js";
 import Type from "./Type";
-import Home3 from "./Home3";
-import Socials from "./Socials";
+import Skills from "./Skills.js";
 import Projects from "../Projects/Projects.js"
 import {
-  Image,
   ScrollDown,
-  ScrollLink,
 } from "./Scroll";
 
-import DarkMode from "../DarkMode/DarkMode";
+
 
 
 function Home() {
   return (
     <section>
       <Container fluid className="home-section" id="home">
+
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
@@ -37,10 +33,10 @@ function Home() {
         </ScrollDown>
         </Container>
       </Container>
-      <Home2 />
-      <Home3 />
+      <About />
+      <Skills />
       <Projects />
-      <Socials />
+
     </section>
   );
 }

@@ -3,7 +3,8 @@ import { Container } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import SP from "../../Assets/Projects/SP-Restaurant.png";
 import Cmd from "../../Assets/Projects/Command-Menu.png";
-import Quarantine from "../../Assets/Projects/quarantine.jpg"
+import Web from "../../Assets/Projects/web-logo.png"
+import Quarantine from "../../Assets/Projects/quarantine.jpg";
 
 function Projects() {
   const sectionRef = useRef(null);
@@ -50,23 +51,24 @@ function Projects() {
           <ProjectCard
             imgPath={Cmd}
             title="Command Menu System"
-            description="Developed a responsive command-line user interface (CLI) using the curses library in Python, designed to host a variety of useful applications. This interface was built to be highly interactive and user-friendly, allowing seamless navigation between different apps. Key features included a weather app that fetched and displayed real-time weather updates, an optical character recognition (OCR) app for converting images of text into editable text, a clock app that provided an accurate time display, and a cryptography app that offered various encryption and decryption functionalities."
+            description="Developed a responsive command-line user interface (CLI) using the curses library in Python. Key features in the CLI included a weather app that fetched and displayed real-time weather updates, an optical character recognition (OCR) app for converting images of text into editable text, a clock app that provided an accurate time display, and a cryptography app that offered various encryption and decryption functionalities."
             ghLink="https://github.com/PalD777/CmdMenuSuite?tab=readme-ov-file"
           />
 
           <ProjectCard
-            imgPath={Cmd}
+            imgPath={Web}
             title="Personal Website"
-            description="Create a personal website using HTML, CSS, JavaScript and React."
+            description="Create a personal website that showcased my skills and the projects that I've worked on. I used HTML, CSS, JavaScript and React to build this website."
             ghLink="https://github.com/therealsid19/therealsid19.github.io"
+            customClass="large-image2"
           />
 
         <ProjectCard
             imgPath={Quarantine}
             title="Personal Website"
-            description="Create a website that allows patients in quarantine to enter their temperature, refer to entertainment like games, new and weather report. Build this using HTML, CSS and JavaScript."
+            description="Created a website that allows patients in quarantine to enter their temperature, refer to entertainment like games, new and weather report. Built this using HTML, CSS and JavaScript."
             ghLink="https://github.com/therealsid19/Quarantine"
-            customClass="large-image2"
+            customClass="large-image3"
           />
         </div>
       </Container>

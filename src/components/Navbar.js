@@ -1,267 +1,78 @@
-import React, { useState } from 'react';
-import { IoHome, IoPersonCircleSharp, IoFlash } from "react-icons/io5";
-import { AiFillProject, AiOutlineFundProjectionScreen } from "react-icons/ai";
-import { MdContactMail } from "react-icons/md";
-import styled from "styled-components";
-import { Link as LinkS } from "react-scroll";
-import { MdArrowForwardIos } from 'react-icons/md';
-import { colors } from './globals/colors';
-import DarkMode from "./DarkMode/DarkMode";
+import React, { useState } from "react";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import Container from "react-bootstrap/Container";
+import { Link } from "react-scroll"; // Use react-scroll for smooth scrolling
+import { AiOutlineHome, AiOutlineFundProjectionScreen, AiOutlineUser, AiOutlineStar } from "react-icons/ai";
+import { CgFileDocument } from "react-icons/cg";
 
-const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+function NavBar() {
+  const [expand, updateExpanded] = useState(false);
+  const [navColour, updateNavbar] = useState(false);
 
-    const toggle = () => {
-        setIsOpen(!isOpen);
-    };
-
-    return (
-        <Nav>
-            <NavbarContainer>
-                <Sidebar>
-                    <FullIcon onClick={toggle}>
-                        <MdArrowForwardIos />
-                    </FullIcon>
-                    <SidebarContainer isOpen={isOpen} onClick={toggle}>
-                        <SidebarWrapper>
-                            <SidebarMenu>
-                                <SidebarLinkHome style={{ border: `2.5px solid ${colors.navHomeDark}` }} activeClass="active" to='home' smooth='easeInCubic' duration={500} spy exact offset={-500}>
-                                    <IoHome />
-                                </SidebarLinkHome>
-                                <SidebarLinkIntro style={{ background: `${colors.navIntro}`, border: `2.5px solid ${colors.navIntroDark}` }} activeClass="active" to='about' smooth='easeInCubic' duration={500} spy exact>
-                                    <IoPersonCircleSharp />
-                                </SidebarLinkIntro>
-                                <SidebarLinkHobbies style={{ background: `${colors.navHobbies}`, border: `2.5px solid ${colors.navHobbiesDark}` }} activeClass="active" to='skills' smooth='easeInCubic' duration={500} spy exact offset={-100}>
-                                    <IoFlash />
-                                </SidebarLinkHobbies>
-                                <SidebarLinkProject style={{ background: `${colors.navProject}`, border: `2.5px solid ${colors.navProjectDark}` }} activeClass="active" to='projects' smooth='easeInCubic' duration={500} spy exact offset={-100}>
-                                    <AiOutlineFundProjectionScreen />
-                                </SidebarLinkProject>
-                                <SidebarLinkSkills style={{ background: `${colors.navSkills}`, border: `2.5px solid ${colors.navSkillsDark}` }} activeClass="active" to='skills' smooth='easeInCubic' duration={500} spy exact offset={-100}>
-                                    <AiFillProject />
-                                </SidebarLinkSkills>
-                                <SidebarLinkContact style={{ background: `${colors.navContact}`, border: `2.5px solid ${colors.navContactDark}` }} activeClass="active" to='social' smooth='easeInCubic' duration={500} spy exact>
-                                    <MdContactMail />
-                                </SidebarLinkContact>
-                            </SidebarMenu>
-                        </SidebarWrapper>
-                    </SidebarContainer>
-                </Sidebar>
-
-            </NavbarContainer>
-        </Nav>
-    );
-};
-
-export default Navbar;
-
-// Styling
-const Nav = styled.nav`
-    width: 100%;
-    height: 80px;
-    display: flex;
-    position: fixed;
-    top: 0;
-    z-index: 99;
-`;
-
-const NavbarContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 20px;
-    max-width: 1100px;
-    margin-top: 20px;
-`;
-
-const Sidebar = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
-
-const SidebarContainer = styled.div`
-    position: fixed;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.375s ease;
-    visibility: ${({ isOpen }) => (isOpen ? "visible" : "hidden")};
-    transform: ${({ isOpen }) => (isOpen ? "translateX(0)" : "translateX(-100%)")};
-    opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
-    margin-left: 5.9rem;
-    width: 370px;
-    height: 100px;
-
-    @media screen and (max-width: 768px) {
-        width: 60px;
-        height: 450px;
-        margin-left: 0.9rem;
-        margin-top: 3.5rem;
-        transform: ${({ isOpen }) => (isOpen ? "translateY(0)" : "translateY(-100%)")};
+  function scrollHandler() {
+    if (window.scrollY >= 20) {
+      updateNavbar(true);
+    } else {
+      updateNavbar(false);
     }
-`;
+  }
 
-const SidebarWrapper = styled.div`
-    display: flex;
-    justify-content: flex-end; /* Align items to the right */
-    align-items: center;
-    width: 100%;
-    margin-left: 400px;
-    margin-bottom: 40px;
-`;
+  window.addEventListener("scroll", scrollHandler);
 
-const SidebarMenu = styled.div`
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-column-gap: 1rem;
-    text-align: center;
+  return (
+    <Navbar
+      expanded={expand}
+      fixed="top"
+      expand="md"
+      className={navColour ? "sticky" : "navbar"}
+    >
+      <Container>
+        <Navbar.Brand href="/" className="d-flex">
+            <img src = "favicon.png" id = "logo"/>
+        </Navbar.Brand>
+        <Navbar.Toggle
+          aria-controls="responsive-navbar-nav"
+          onClick={() => {
+            updateExpanded(expand ? false : "expanded");
+          }}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </Navbar.Toggle>
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="ms-auto" defaultActiveKey="#home">
+            <Nav.Item>
+              <Nav.Link as={Link} to="home" smooth onClick={() => updateExpanded(false)}>
+                <AiOutlineHome style={{ marginBottom: "3px" }} /> Home
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link as={Link} to="about" smooth onClick={() => updateExpanded(false)}>
+                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link as={Link} to="skill-section" smooth onClick={() => updateExpanded(false)}>
+                <AiOutlineStar style={{ marginBottom: "2px" }} /> Skills
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link as={Link} to="project-section" smooth onClick={() => updateExpanded(false)}>
+                <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} /> Projects
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="https://drive.google.com/file/d/1V4lncdb6yCDNzpK5306f1fjOVlPJd2Z-/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                    <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
+                </Nav.Link>
+            </Nav.Item>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+}
 
-    @media screen and (max-width: 768px) {
-        grid-template-columns: 1fr;
-        grid-row-gap: 1.5rem;
-    }
-`;
-
-const SidebarLinkHome = styled(LinkS)`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    text-decoration: none;
-    transition: 0.375s;
-    color: ${colors.navHomeDark};
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    border-radius: 100px;
-    position: relative;
-
-    &.active {
-        color: #fff;
-    }
-`;
-
-const SidebarLinkIntro = styled(LinkS)`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    text-decoration: none;
-    transition: 0.375s;
-    color: ${colors.navIntroDark};
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    border-radius: 100px;
-    position: relative;
-
-    &.active {
-        color: #fff;
-    }
-`;
-
-const SidebarLinkHobbies = styled(LinkS)`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    text-decoration: none;
-    transition: 0.375s;
-    color: ${colors.navHobbiesDark};
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    border-radius: 100px;
-    position: relative;
-
-    &.active {
-        color: #fff;
-    }
-`;
-
-const SidebarLinkProject = styled(LinkS)`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    text-decoration: none;
-    transition: 0.375s;
-    color: ${colors.navProjectDark};
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    border-radius: 100px;
-    position: relative;
-
-    &.active {
-        color: #fff;
-    }
-`;
-
-const SidebarLinkSkills = styled(LinkS)`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    text-decoration: none;
-    transition: 0.375s;
-    color: ${colors.navSkillsDark};
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    border-radius: 100px;
-    position: relative;
-
-    &.active {
-        color: #fff;
-    }
-`;
-
-const SidebarLinkContact = styled(LinkS)`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    text-decoration: none;
-    transition: 0.375s;
-    color: ${colors.navContactDark};
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    border-radius: 100px;
-    position: relative;
-
-    &.active {
-        color: #fff;
-    }
-`;
-
-const DarkModeWrapper = styled.div`
-    margin-left: 1030px;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    height: 80px; /* Ensure the height is consistent with NavbarContainer */
-`;
-
-const FullIcon = styled.div`
-    display: block;
-    font-size: 1.8rem;
-    cursor: pointer;
-    margin-left: 1.4rem;
-    opacity: 0.5;
-    transition: 0.375s;
-    color: ${colors.mainPurple};
-
-    &:hover {
-        opacity: 1;
-    }
-    
-    @media screen and (max-width: 768px) {
-        rotate: 90deg;
-        margin-left: 0rem;
-        right: 0.9rem;
-    }
-`;
+export default NavBar;

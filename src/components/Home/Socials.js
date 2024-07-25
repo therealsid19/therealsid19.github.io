@@ -1,17 +1,16 @@
 import {
     AiFillGithub,
-    AiOutlineTwitter,
     AiFillInstagram,
   } from "react-icons/ai";
   import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
   import { FaLinkedinIn } from "react-icons/fa";
 
 function Socials(){
     return(
         <Row>
           <Col md={12} className="home-about-social">
-            <h1 id="social">FIND ME ON</h1>
+            <h1 id="social">Contact Me</h1>
             <p>
               Feel free to <span className="purple">connect </span>with me
             </p>
@@ -29,7 +28,7 @@ function Socials(){
 
               <li className="social-icons">
                 <a
-                  href="www.linkedin.com/in/siddhant-nair-61186b282"
+                  href="https://www.linkedin.com/in/siddhant-nair-61186b282"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
