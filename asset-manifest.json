@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.0f69cdef.css",
-    "main.js": "/static/js/main.35683686.js",
+    "main.css": "/static/css/main.2c6276d0.css",
+    "main.js": "/static/js/main.c0dfeb4f.js",
     "static/media/SP-Restaurant.png": "/static/media/SP-Restaurant.4a873f3b6938fd5ccca5.png",
+    "static/media/web-logo.png": "/static/media/web-logo.55f7496fa0da7a4d572b.png",
     "static/media/bg.jpg": "/static/media/bg.5e8125646f2e0506beee.jpg",
+    "static/media/about-pic.jpeg": "/static/media/about-pic.10ac4bef093ff35ec5a3.jpeg",
     "static/media/Command-Menu.png": "/static/media/Command-Menu.23cc47cc57b7b8d21180.png",
-    "static/media/web-logo.png": "/static/media/web-logo.d8aa3e9d1f724bc30d9d.png",
     "static/media/quarantine.jpg": "/static/media/quarantine.e89838ce1660a86d983a.jpg",
     "static/media/pre.svg": "/static/media/pre.c25ab86afa9b85ab6019.svg",
     "index.html": "/index.html",
-    "main.0f69cdef.css.map": "/static/css/main.0f69cdef.css.map",
-    "main.35683686.js.map": "/static/js/main.35683686.js.map"
+    "main.2c6276d0.css.map": "/static/css/main.2c6276d0.css.map",
+    "main.c0dfeb4f.js.map": "/static/js/main.c0dfeb4f.js.map"
   },
   "entrypoints": [
-    "static/css/main.0f69cdef.css",
-    "static/js/main.35683686.js"
+    "static/css/main.2c6276d0.css",
+    "static/js/main.c0dfeb4f.js"
   ]
 }
