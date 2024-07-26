@@ -65,7 +65,7 @@ function Projects() {
 
         <ProjectCard
             imgPath={Quarantine}
-            title="Personal Website"
+            title="Quarantine++"
             description="Created a website that allows patients in quarantine to enter their temperature, refer to entertainment like games, new and weather report. Built this using HTML, CSS and JavaScript."
             ghLink="https://github.com/therealsid19/Quarantine"
             customClass="large-image3"
