@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useInView } from 'react-intersection-observer';
+import pic from "../../Assets/about-pic.jpeg"
 
 
 function About() {
@@ -40,7 +41,9 @@ function About() {
               </p>
             </div>
           </Col>
-          
+          <Col md={6}>
+            <img src = {pic} className={`home-about-description fade-in ${inView ? 'visible' : ''}`} ref={ref}/>
+          </Col>
         </Row>
       </Container>
     </Container>

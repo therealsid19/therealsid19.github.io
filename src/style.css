@@ -11,7 +11,7 @@ html {
     rgba(19, 23, 24, 0.644)
   );
 
-  --imp-text-color: #0791ad;
+  --imp-text-color: #ffffff;
 }
 
 
@@ -199,7 +199,7 @@ button:focus {
 }
 
 .main-name {
-  color: #407787;
+  color: #ffffff;
 
 }
 
@@ -544,7 +544,7 @@ button:focus {
 }
 
 .skill-title{
-  color:#0791ad
+  color:#ffffff
 }
 .tech-icons {
   display: flex;

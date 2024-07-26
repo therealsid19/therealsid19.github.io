@@ -44,14 +44,14 @@ function Projects() {
           <ProjectCard
             imgPath={SP}
             title="S&P Restaurant Management System"
-            description="Developed a comprehensive Restaurant Management System to streamline and optimize restaurant operations, efficiently handling over 1000 daily transactions. This project leveraged Python for backend logic, Kivy for the graphical user interface, and SQL for database management, resulting in a robust and scalable solution capable of meeting the high demands of a busy restaurant environment."
+            description="Developed a comprehensive Restaurant Management System to streamline and optimize restaurant operations, efficiently handling over 1000 daily transactions. This project used Python (Kivy) for backend logic along with JSON and SQL for database management."
             ghLink="https://github.com/PalD777/SP_RestaurantManagementSystem"
             customClass="large-image" // Apply the custom class here
           />
           <ProjectCard
             imgPath={Cmd}
             title="Command Menu System"
-            description="Developed a responsive command-line user interface (CLI) using the curses library in Python. Key features in the CLI included a weather app that fetched and displayed real-time weather updates, an optical character recognition (OCR) app for converting images of text into editable text, a clock app that provided an accurate time display, and a cryptography app that offered various encryption and decryption functionalities."
+            description="Developed a responsive command-line interface (CLI) and the key features included weather and clock that fetched and displayed real-time weather updates and the current time, an optical character recognition (OCR) for converting images of text into editable text, and cryptography that offered various encryption and decryption functionalities."
             ghLink="https://github.com/PalD777/CmdMenuSuite?tab=readme-ov-file"
           />
 
