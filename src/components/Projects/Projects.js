@@ -51,7 +51,7 @@ function Projects() {
           <ProjectCard
             imgPath={Cmd}
             title="Command Menu System"
-            description="Developed a responsive command-line interface (CLI) and the key features included weather and clock that fetched and displayed real-time weather updates and the current time, an optical character recognition (OCR) for converting images of text into editable text, and cryptography that offered various encryption and decryption functionalities."
+            description="Developed a responsive command-line interface (CLI) and the key features included weather and clock, an optical character recognition (OCR) for converting images of text into editable text and cryptography that offered various encryption and decryption functionalities."
             ghLink="https://github.com/PalD777/CmdMenuSuite?tab=readme-ov-file"
           />
 
