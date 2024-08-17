@@ -11,15 +11,28 @@ import {
   DiMysql,
   DiHtml5,
   DiCss3,
+  DiHaskell
 } from "react-icons/di";
+import "../../style.css";
+import { IoLogoFirebase } from "react-icons/io5";
+import { useInView } from "react-intersection-observer";
 
 function renderTooltip(props) {
   return <Tooltip {...props}>{props.msg}</Tooltip>;
 }
 
 function Skills() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    <Container id="skills" className="skill-section section">
+    <Container
+      id="skills"
+      className={`skill-section section ${inView ? "animate" : ""}`}
+      ref={ref}
+    >
       <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
         <h1 className="project-heading">
           <strong className="skill-title">Technical Skills</strong>
@@ -54,6 +67,12 @@ function Skills() {
           </OverlayTrigger>
           <OverlayTrigger placement="top" overlay={renderTooltip({ msg: 'MySQL' })}>
             <span className="icon di-mysql"><DiMysql /></span>
+          </OverlayTrigger>
+          <OverlayTrigger placement="top" overlay={renderTooltip({ msg: 'Firebase' })}>
+            <span className="icon io5-firebase"><IoLogoFirebase color="#FFA611"/></span>
+          </OverlayTrigger>
+          <OverlayTrigger placement="top" overlay={renderTooltip({ msg: 'Haskell' })}>
+            <span className="icon io5-haskell"><DiHaskell color="#5D2F91"/></span>
           </OverlayTrigger>
         </Col>
       </Row>

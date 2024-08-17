@@ -5,6 +5,8 @@ import SP from "../../Assets/Projects/SP-Restaurant.png";
 import Cmd from "../../Assets/Projects/Command-Menu.png";
 import Web from "../../Assets/Projects/web-logo.png"
 import Quarantine from "../../Assets/Projects/quarantine.jpg";
+import IM from "../../Assets/Projects/im.png";
+import AI from "../../Assets/Projects/AI3.png";
 
 function Projects() {
   const sectionRef = useRef(null);
@@ -41,6 +43,14 @@ function Projects() {
           <strong className="purple">My Projects</strong>
         </h1>
         <div className="projects-list">
+        <ProjectCard
+            imgPath={AI}
+            title="AI Chatbot Assistant"
+            description="Built with Next.js, ChatGPT API, Firebase for authentication, LangChain, Pinecone, and React, this AI Chatbot Assistant delivers interactive, personalized AI conversations and is optimized for both desktop and mobile use."
+            ghLink="https://github.com/alexfarouz/ai-customer-support"
+            customClass="large-image" // Apply the custom class here
+          />
+
           <ProjectCard
             imgPath={SP}
             title="S&P Restaurant Management System"
@@ -48,11 +58,20 @@ function Projects() {
             ghLink="https://github.com/PalD777/SP_RestaurantManagementSystem"
             customClass="large-image" // Apply the custom class here
           />
+
           <ProjectCard
             imgPath={Cmd}
             title="Command Menu System"
-            description="Developed a responsive command-line interface (CLI) and the key features included weather and clock, an optical character recognition (OCR) for converting images of text into editable text and cryptography that offered various encryption and decryption functionalities."
+            description="Developed a responsive command-line interface (CLI) and the key features included weather and clock, an optical character recognition (OCR) and cryptography."
             ghLink="https://github.com/PalD777/CmdMenuSuite?tab=readme-ov-file"
+          />
+
+          <ProjectCard
+            imgPath={IM}
+            title="Inventory Management System"
+            description="Built an inventory management system that allows users to add, update, delete and view products. This project used Next.js for the frontend, Firebase for user authentication."
+            ghLink="https://github.com/therealsid19/inventory-management"
+            customClass="large-image" // Apply the custom class here
           />
 
           <ProjectCard

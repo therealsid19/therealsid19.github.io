@@ -1,8 +1,7 @@
 html {
   --section-background-color: linear-gradient(
     to bottom left,
-    rgba(154, 128, 11, 0.712),
-    rgba(5, 0, 142, 0.829)
+    rgb(11,20,26), rgb(10,19,25)
   );
 
   --image-gradient: linear-gradient(
@@ -79,12 +78,26 @@ button:focus {
 
 
 .navbar {
+  width: 100% !important;
   background-color: transparent !important;
   transition: all 0.4s ease-out !important;
   box-shadow: none !important;
   padding: 0.5rem 2rem !important;
   font-size: 1.1rem !important;
   z-index: 10 !important;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: flex-start; /* Aligns content to the left */
+  align-items: center; /* Centers content vertically */
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .sticky {
@@ -124,6 +137,7 @@ button:focus {
   color: #fff !important;
   margin-right: 1rem !important;
   transition: color 0.4s ease-out !important;
+  cursor: pointer;
 }
 
 .navbar-nav .nav-link:hover {
@@ -170,10 +184,26 @@ button:focus {
   position: relative;
   z-index: -1;
   background-image: var(--image-gradient), url(./Assets/bg.jpg);
-  background-position: top center;
+  background-position: center center;
   background-repeat: no-repeat;
   padding-bottom: 150px !important;
   padding-top: 30px !important;
+  background-size: cover;
+  height: 100vh;
+}
+.particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+@media (max-width: 768px) {
+  .home-section {
+    background-size: 100% 100%; 
+    height: 100vh;
+  }
 }
 
 .heading{
@@ -191,6 +221,7 @@ button:focus {
   font-size: 3em !important;
   padding-left: 50px !important;
   margin-top: -70px;
+
 }
 
 .heading-name {
@@ -205,7 +236,7 @@ button:focus {
 
 .Typewriter__wrapper {
   font-size: 2.2em !important;
-  color: #407787 !important;
+  color: #ffffff !important;
   font-weight: 600 !important;
   font-family: Anton;
 }
@@ -242,7 +273,8 @@ button:focus {
 
 /* About Me Section */
 .about-text{
-  color:#ffffff
+  color:#ffffff;
+  font-family: Poppins;
 }
 
 .about-languages{
@@ -251,8 +283,22 @@ button:focus {
 .home-about-section {
   position: relative;
   padding: 70px 0 !important;
-  background: linear-gradient(to right, #0d1d3f, #042454); /* Blue gradient background */
+  background: linear-gradient(to right, rgb(11,20,26), rgb(10,19,25)); /* Blue gradient background */
 }
+
+.home-about-pic {
+  color: white !important;
+  text-align: left;
+  border-radius: 50%; 
+  border-width: 5px; 
+
+
+  border: 5px solid white; 
+  box-sizing: border-box; 
+  display: block; 
+  margin: 0 auto; 
+}
+
 
 .home-about-description {
   color: white !important;
@@ -305,7 +351,7 @@ button:focus {
 /* Footer */
 /* --------- */
 .footer {
-  background: linear-gradient(135deg, #1e2a38, #2c3e50);
+
   color: #fff;
   padding: 40px 20px;
   position: relative;
@@ -389,8 +435,13 @@ button:focus {
   padding-top: 150px !important;
   padding-bottom: 150px !important;
   background-image: var(--section-background-color) !important;
+  
 }
-
+.d-flex {
+  display: flex;
+  justify-content: flex-start; /* Aligns content to the left horizontally */
+  align-items: flex-start; /* Aligns content to the top left vertically */
+}
 .projects-list {
   display: grid; 
   grid-template-columns: repeat(2, 1fr); 
@@ -531,21 +582,33 @@ button:focus {
 
 
 /* Skills Section */
-
 .skill-section {
   margin-top: 100px;
   padding: 20px;
   margin-bottom: 100px;
-
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-.skills {
-  margin-top: 50px;
+.skill-section.animate {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-.skill-title{
-  color:#ffffff
+.skill-title {
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 2s ease-out, transform 2s ease-out;
+  font-family: Poppins;
 }
+
+.skill-section.animate .skill-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .tech-icons {
   display: flex;
   flex-wrap: wrap;
@@ -556,13 +619,41 @@ button:focus {
 }
 
 .tech-icons .icon {
-  animation: fadeIn 1s ease-out forwards;
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 0; /* Start as invisible */
+  transform: translateY(20px); /* Start slightly below */
+  transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, opacity 1s ease;
 }
 
-/* Add keyframes for fading in icons */
-@keyframes fadeIn {
+.skill-section.animate .tech-icons .icon {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover effects */
+.tech-icons .icon:hover {
+  transform: scale(1.2); /* Slight scaling on hover */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow */
+}
+
+/* Pulse effect */
+.tech-icons .icon:hover {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Keyframes for fading in icons */
+@keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -573,100 +664,40 @@ button:focus {
   }
 }
 
-/* Apply the animation to tech icons */
-.tech-icons .icon {
-  animation: fadeIn 1s ease-out forwards;
-  opacity: 0; /* Start as invisible */
-  transform: translateY(20px); /* Start slightly below */
-}
+/* Animation delay for each icon */
+.tech-icons .icon:nth-child(1) { animation-delay: 0.2s; }
+.tech-icons .icon:nth-child(2) { animation-delay: 0.4s; }
+.tech-icons .icon:nth-child(3) { animation-delay: 0.6s; }
+.tech-icons .icon:nth-child(4) { animation-delay: 0.8s; }
+.tech-icons .icon:nth-child(5) { animation-delay: 1s; }
+.tech-icons .icon:nth-child(6) { animation-delay: 1.2s; }
+.tech-icons .icon:nth-child(7) { animation-delay: 1.4s; }
+.tech-icons .icon:nth-child(8) { animation-delay: 1.6s; }
+.tech-icons .icon:nth-child(9) { animation-delay: 1.8s; }
+.tech-icons .icon:nth-child(10) { animation-delay: 2s; }
 
-/* Add a delay for each icon */
-.tech-icons .icon:nth-child(1) {
-  animation-delay: 0.2s;
-}
+/* Icon colors */
+.tech-icons .icon.di-python svg { color: #3776AB; }
+.tech-icons .icon.io5-firebase svg { color: #FFA611; }
+.tech-icons .icon.cg-cplusplus svg { color: #00599C; }
+.tech-icons .icon.di-java svg { color: #007396; }
+.tech-icons .icon.di-html5 svg { color: #E34F26; }
+.tech-icons .icon.di-css3 svg { color: #1572B6; }
+.tech-icons .icon.di-jsbadge svg { color: #F7DF1E; }
+.tech-icons .icon.di-react svg { color: #61DAFB; }
+.tech-icons .icon.di-nodejs svg { color: #339933; }
+.tech-icons .icon.di-git svg { color: #F05032; }
+.tech-icons .icon.di-mysql svg { color: #4479A1; }
 
-.tech-icons .icon:nth-child(2) {
-  animation-delay: 0.4s;
-}
-
-.tech-icons .icon:nth-child(3) {
-  animation-delay: 0.6s;
-}
-
-.tech-icons .icon:nth-child(4) {
-  animation-delay: 0.8s;
-}
-
-.tech-icons .icon:nth-child(5) {
-  animation-delay: 1s;
-}
-
-.tech-icons .icon:nth-child(6) {
-  animation-delay: 1.2s;
-}
-
-.tech-icons .icon:nth-child(7) {
-  animation-delay: 1.4s;
-}
-
-.tech-icons .icon:nth-child(8) {
-  animation-delay: 1.6s;
-}
-
-.tech-icons .icon:nth-child(9) {
-  animation-delay: 1.8s;
-}
-
-.tech-icons .icon:nth-child(10) {
-  animation-delay: 2s;
-}
-
-/* Set original colors for each icon */
-.tech-icons .icon.di-python svg {
-  color: #3776AB;
-}
-
-.tech-icons .icon.cg-cplusplus svg {
-  color: #00599C;
-}
-
-.tech-icons .icon.di-java svg {
-  color: #007396;
-}
-
-.tech-icons .icon.di-html5 svg {
-  color: #E34F26;
-}
-
-.tech-icons .icon.di-css3 svg {
-  color: #1572B6;
-}
-
-.tech-icons .icon.di-jsbadge svg {
-  color: #F7DF1E;
-}
-
-.tech-icons .icon.di-react svg {
-  color: #61DAFB;
-}
-
-.tech-icons .icon.di-nodejs svg {
-  color: #339933;
-}
-
-.tech-icons .icon.di-git svg {
-  color: #F05032;
-}
-
-.tech-icons .icon.di-mysql svg {
-  color: #4479A1;
-}
-
+/* Responsive design for smaller screens */
 @media (max-width: 767px) {
   .tech-icons {
+    font-size: 50px; /* Adjust icon size for smaller screens */
     margin: 10px;
   }
 }
+
+
 
 
 /* Additional styles for tooltip */
@@ -678,22 +709,79 @@ button:focus {
   font-size: 0.9em;
 }
 
-
-
-.quote-card-view {
-  border: none !important;
-  color: white !important;
-  background-color: transparent !important;
+/* Contact Section */
+.contact-section {
+  padding: 60px 0;
+  background-color: #001f3f00; /* Dark blue background to match the theme */
+  color: #ffffff; /* White text for contrast */
+  text-align: center;
+  transition: background-color 0.5s ease; /* Smooth background transition */
 }
 
-.about-activity {
-  list-style: none !important;
-  text-align: left !important;
-  padding-left: 1px !important;
+
+.section-title {
+  font-size: 36px;
+  color: #ffffff;
+  margin-bottom: 40px;
+  font-family: Poppins;
+  transition: color 0.3s ease; /* Smooth color transition */
 }
 
+.contact-form-wrapper {
+  background-color: #0074d9; 
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scale and shadow transition */
+}
+
+.contact-form-wrapper:hover {
+  transform: scale(1.02); /* Slightly scale up on hover */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.contact-form-wrapper .form-label {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.contact-form-wrapper .form-control {
+  background-color: #004080; /* Darker input background */
+  color: #ffffff; /* White text for inputs */
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth background and text color transition */
+}
+
+.contact-form-wrapper .form-control::placeholder {
+  color: #c0c0c0; /* Light grey placeholder */
+}
+
+.contact-form-wrapper .form-control:focus {
+  background-color: #003366; /* Even darker background when focused */
+  color: #ffffff; /* Maintain white text */
+  outline: none; /* Remove default focus outline */
+}
+
+.submit-button {
+  background-color: #001f3f; /* Dark blue button */
+  border-color: #001f3f;
+  width: 100%;
+  font-size: 18px;
+  padding: 10px;
+  color: #ffffff;
+  margin-top: 20px; 
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth button transitions */
+}
+
+.submit-button:hover {
+  background-color: #004080; /* Slightly lighter on hover */
+  border-color: #004080;
+  transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Responsive Design */
 @media (max-width: 767px) {
-  .about-img {
-    padding-top: 0 !important;
+  .contact-form-wrapper {
+    padding: 20px;
   }
 }
