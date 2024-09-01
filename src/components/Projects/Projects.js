@@ -7,6 +7,7 @@ import Web from "../../Assets/Projects/web-logo.png"
 import Quarantine from "../../Assets/Projects/quarantine.jpg";
 import IM from "../../Assets/Projects/im.png";
 import AI from "../../Assets/Projects/AI3.png";
+import Note from "../../Assets/Projects/Notefy-logo.png";
 
 function Projects() {
   const sectionRef = useRef(null);
@@ -52,6 +53,14 @@ function Projects() {
           />
 
           <ProjectCard
+            imgPath={Note}
+            title="Notefy"
+            description="An AI-powered flashcard application that transforms text, PDFs, and YouTube videos into interactive flashcards, making studying more engaging and personalized."
+            ghLink="https://github.com/SanaAshraf28/Notefy"
+            customClass="large-image3"
+          />
+
+          <ProjectCard
             imgPath={SP}
             title="S&P Restaurant Management System"
             description="Developed a comprehensive Restaurant Management System to streamline and optimize restaurant operations, efficiently handling over 1000 daily transactions. This project used Python (Kivy) for backend logic along with JSON and SQL for database management."
@@ -82,13 +91,6 @@ function Projects() {
             customClass="large-image2"
           />
 
-        <ProjectCard
-            imgPath={Quarantine}
-            title="Quarantine++"
-            description="Created a website that allows patients in quarantine to enter their temperature, refer to entertainment like games, new and weather report. Built this using HTML, CSS and JavaScript."
-            ghLink="https://github.com/therealsid19/Quarantine"
-            customClass="large-image3"
-          />
         </div>
       </Container>
     </Container>
